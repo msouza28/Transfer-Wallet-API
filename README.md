@@ -34,10 +34,15 @@ Caso tenha interesse em subir o projeto em sua máquina, não esqueça de consul
 
 Crie um arquivo .env para suas variávies de ambiente, assim conseguirá subir o Postgress com Docker. Fica muito facil com o arquivo compose.yaml na raiz do projeto xD 
 
-
+Para subir o prometheus, no arquivo prometheus.yml, passe o host da sua maquina. Para desenvolvimento local é necessário o IP ao invés do localhost.
 ## Referência
 Meus agradecimentos ao Bruno Garcia do canal Build & Run.
 Parabéns pelo excelente trabalho!
  - [Build & Run - Youtube Link](https://www.youtube.com/@buildrun-tech)
 
+
+
+## Melhorias
+
+- Implementação de monitoramento e observabilidade com  Spring Actuator, Prometheus e Grafana para exposição dos dados em dashboard.
 
