@@ -1,4 +1,11 @@
 services:
+  prometheus:
+    image: 'prom/prometheus:latest'
+    volumes:
+      - './config/prometheus.yml:/etc/prometheus/prometheus.yml'
+      - 'prometheus_data:/prometheus'
+    ports:
+      - '9090:9090'
   postgres:
     image: 'postgres:latest'
     environment:
@@ -10,5 +17,6 @@ services:
     ports:
       - '5432:5432'
 volumes:
+  prometheus_data:
   postgres_data:
     driver: local
