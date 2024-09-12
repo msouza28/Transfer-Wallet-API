@@ -1,4 +1,14 @@
+networks:
+  dev-network:
+    driver: bridge
+
 services:
+  grafana:
+    image: 'grafana/grafana:latest'
+    ports:
+      - '3000:3000'
+    networks:
+      - 'dev-network'
   prometheus:
     image: 'prom/prometheus:latest'
     volumes:
@@ -6,6 +16,8 @@ services:
       - 'prometheus_data:/prometheus'
     ports:
       - '9090:9090'
+    networks:
+      - 'dev-network'
   postgres:
     image: 'postgres:latest'
     environment:
@@ -18,5 +30,6 @@ services:
       - '5432:5432'
 volumes:
   prometheus_data:
+  grafana_data:
   postgres_data:
     driver: local
