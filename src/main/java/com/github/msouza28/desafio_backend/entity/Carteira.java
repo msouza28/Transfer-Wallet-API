@@ -50,7 +50,7 @@ public class Carteira {
     }
 
     public boolean isBalanceEqualOrGreaterThan(@DecimalMin("0.01") @NotNull BigDecimal value) {
-        return this.saldo.doubleValue() > value.doubleValue();
+        return this.saldo.doubleValue() >= value.doubleValue();
     }
 
     public void envia(@DecimalMin("0.01") @NotNull BigDecimal value) {
